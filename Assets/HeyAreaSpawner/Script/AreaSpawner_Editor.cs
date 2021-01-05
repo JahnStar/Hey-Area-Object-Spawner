@@ -25,7 +25,7 @@ public class AreaSpawner_Editor : Editor
         baslikYaziTipi.fontSize = 15;
         baslikYaziTipi.fontStyle = FontStyle.Bold;
         baslikYaziTipi.normal.textColor = Color.white;
-        GUILayout.Label("Hey\nArea Object Spawner v1", baslikYaziTipi);
+        GUILayout.Label("Hey\nArea Object Spawner v1.1", baslikYaziTipi);
         GUILayout.Space(5);
         sekme = GUILayout.Toolbar(sekme, new string[] { "Duzenleyici\n-Editor-", "Ayarlar\n-Settings-" });
         switch (sekme)
