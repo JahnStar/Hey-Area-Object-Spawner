@@ -13,7 +13,7 @@ Hey Area Object Spawner is a very simple to use level design tool that allows yo
   <a alt="Developed by Halil Emre Yildiz" href="https://youtu.be/H4_t-tJrEok"><img src="http://img.youtube.com/vi/H4_t-tJrEok/0.jpg"><br><b>Click for tutorial video</b></a>
 </p>
 
-<p align="center">The plugin is available on the <b>Unity Asset Store</b> for free: <a href="https://assetstore.unity.com/packages/slug/181716"><b>Click to add to your unity assets</b></a></p>
+<p align="center">The plugin is available on the <b>Unity Asset Store</b> for free: <a href="https://assetstore.unity.com/packages/slug/181716"><b>Click for add to your unity assets</b></a></p>
 
 <b> Features: </b>
 * Spawning with random scale and random rotation.
