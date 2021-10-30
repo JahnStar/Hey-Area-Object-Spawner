@@ -32,7 +32,7 @@ Hey Area Object Spawner is a very simple to use level design tool that allows yo
 <img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/HeyAreaSpawner/Tutorial/3.gif" width="205" height="291"/>
 4. Add your spawn properties to the spawner and spawn objects<br><br>
 <img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/HeyAreaSpawner/Tutorial/4.gif" width="692" height="428"/>
-** 5. New UI ** <br><br>
+<b> New UI </b> <br><br>
 <img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/HeyAreaSpawner/Tutorial/0.png" width="261" height="381"/>
 <b> Controls </b>
 
