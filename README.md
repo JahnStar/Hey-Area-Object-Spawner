@@ -23,9 +23,6 @@ Hey Area Object Spawner is a very simple to use level design tool that allows yo
 * Determine if a point is inside a area (with function)
 * You can also use it as a **Procedural Foliage Spawner**
 
-* New UI <br>
-<img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/HeyAreaSpawner/Tutorial/0.png" width="509" height="349"/>
-
 ## How To Use
 1. Drag and drop the spawner into hierarchy<br>
 <img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/HeyAreaSpawner/Tutorial/1.gif" width="230" height="305"/>
@@ -35,6 +32,8 @@ Hey Area Object Spawner is a very simple to use level design tool that allows yo
 <img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/HeyAreaSpawner/Tutorial/3.gif" width="205" height="291"/>
 4. Add your spawn properties to the spawner and spawn objects<br><br>
 <img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/HeyAreaSpawner/Tutorial/4.gif" width="692" height="428"/>
+* New UI: <br><br>
+<img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/HeyAreaSpawner/Tutorial/0.png" width="261" height="381"/>
 <b> Controls </b>
 
 - Create Point: **SHIFT+CLICK**
