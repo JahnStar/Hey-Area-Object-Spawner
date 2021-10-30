@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SecilenMat
+  m_Name: LineMat
   m_Shader: {fileID: 4800000, guid: f103b95a819b7a94e84f259b6e469cf0, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 0
@@ -74,7 +74,7 @@ Material:
     - _DistortionStrength: 1
     - _DistortionStrengthScaled: 0
     - _DstBlend: 0
-    - _Emission: 1
+    - _Emission: 0
     - _EmissionEnabled: 0
     - _FlipbookMode: 0
     - _GlossMapScale: 1
@@ -92,13 +92,13 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _ZOffsetFactor: -500
+    - _ZOffsetFactor: -250
     - _ZOffsetUnits: 0
     - _ZWrite: 1
     m_Colors:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 0, g: 1.1764706, b: 2, a: 1}
-    - _ColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 0, g: 0.44117647, b: 0.44117647, a: 1}
+    - _ColorAddSubDiff: {r: 1, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

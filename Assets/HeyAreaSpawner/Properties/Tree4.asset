@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c96f2557557d240b7a5ec9a45efd5e, type: 3}
   m_Name: Tree4
   m_EditorClassIdentifier: 
-  nesne: {fileID: 221851685507069760, guid: 60af07545843bee49a1ecf6509af2cd6, type: 3}
-  tip: 0
-  miktar: 250
-  rastgeleBoyut: {x: 0.75, y: 1.25}
-  rastgeleRotasyon: {x: -360, y: 360}
+  gameObject: {fileID: 949904552379303480, guid: a0c3ff56836282c48831705eb4ac5401, type: 3}
+  type: 0
+  count: 250
+  randomScale: {x: 1, y: 1}
+  randomRotation: {x: -360, y: 360}

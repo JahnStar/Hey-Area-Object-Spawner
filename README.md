@@ -1,4 +1,4 @@
-# Hey Area Object Spawner
+# Hey Area Object Spawner v1.2
 
 <p align="center">
     <a href="http://u3d.as/27ry" alt="Unity 2020.1+"><img src="https://img.shields.io/badge/Unity-2020.1%2B-blue.svg" /></a>
@@ -23,6 +23,9 @@ Hey Area Object Spawner is a very simple to use level design tool that allows yo
 * Determine if a point is inside a area (with function)
 * You can also use it as a **Procedural Foliage Spawner**
 
+* New UI <br>
+<img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/HeyAreaSpawner/Tutorial/0.png" width="509" height="349"/>
+
 ## How To Use
 1. Drag and drop the spawner into hierarchy<br>
 <img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/HeyAreaSpawner/Tutorial/1.gif" width="230" height="305"/>
@@ -46,7 +49,7 @@ Unity 2020.1.0 or later versions.
 
 MIT License
 
-Copyright (c) 2020 Halil Emre Yildiz
+Copyright (c) 2021 Halil Emre Yildiz
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

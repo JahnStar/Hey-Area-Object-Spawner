@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NoktaMat
+  m_Name: SelectedMat
   m_Shader: {fileID: 4800000, guid: f103b95a819b7a94e84f259b6e469cf0, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 0
@@ -92,12 +92,12 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _ZOffsetFactor: -50000
+    - _ZOffsetFactor: -500
     - _ZOffsetUnits: 0
     - _ZWrite: 1
     m_Colors:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 0.88235295, g: 0.12016513, b: 0, a: 1}
+    - _Color: {r: 0, g: 1.1764706, b: 2, a: 1}
     - _ColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}

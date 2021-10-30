@@ -1,7 +1,7 @@
 ﻿//Developed by Halil Emre Yildiz - @Jahn_Star
 //https://github.com/JahnStar/Hey-Area-Object-Spawner
 //https://jahnstar.github.io/donate/
-// Last Edit: 31.12.2020
+// Last Update: 30.10.2021
 #if UNITY_EDITOR
 using System.Collections.Generic;
 using UnityEditor;
@@ -11,76 +11,76 @@ namespace JahnStar.AreaSpawner
     [ExecuteInEditMode]
     public class AreaSpawner : MonoBehaviour
     {
+        [Range(0.5f, 10)]
+        public float lineThickness = 5, pointSize = 5;
+        public GameObject pointSphere;
         [Space(5)]
         public Material lineMat;
         public Material pointMat, selectedMat;
-        [Space(5)]
-        public GameObject pointSphere;
-        [Range(0.5f, 10)]
-        public float pointSize = 5;
-        private float oncekiNoktaBuyuklugu, oncekiAltNesneSayisi;
-        private bool alanlariGuncelle;
+        private float _prev_childCount;
+        private string _prev_size;
+        private bool _updateArea;
         [HideInInspector]
-        public int seciliAlan_id = 0;
+        public int selectedAreaID = 0;
         [HideInInspector]
-        public bool duzenlemeModu, alanOzellikleri = true;
+        public bool editMode, show_AreaObjects = true;
         [HideInInspector]
         public Transform parentSpawnedObject;
         [HideInInspector]
-        public List<SpawnObjectProperty> kopyalananOzellikler;
+        public List<SpawnObjectProperty> clipboard;
         void Update()
         {
-            if (pointSize != oncekiNoktaBuyuklugu || alanlariGuncelle)
+            if (pointSize + lineThickness + "" != _prev_size || _updateArea)
             {
-                for (int i = 0; i < transform.childCount; i++) transform.GetChild(i).GetComponent<HeyArea>().NoktalariBoyutlandir(pointSize);
-                oncekiNoktaBuyuklugu = pointSize;
-                alanlariGuncelle = false;
+                for (int i = 0; i < transform.childCount; i++) transform.GetChild(i).GetComponent<HeyArea>().ResizePoint(pointSize, lineThickness);
+                _prev_size = pointSize + lineThickness + "";
+                _updateArea = false;
             }
-            if (transform.childCount != oncekiAltNesneSayisi)
+            if (transform.childCount != _prev_childCount)
             {
                 for (int i = 0; i < transform.childCount; i++) transform.GetChild(i).name = "Area_" + i;
-                oncekiAltNesneSayisi = transform.childCount;
+                _prev_childCount = transform.childCount;
             }
         }
-        public void AlanSec(int alan_id)
+        public void ChooseArea(int areaID)
         {
-            if (alan_id >= 0) seciliAlan_id = alan_id;
-            try { for (int i = 0; i < transform.childCount; i++) transform.GetChild(i).GetComponent<LineRenderer>().material = i == seciliAlan_id ? selectedMat : lineMat; }
+            if (areaID >= 0) selectedAreaID = areaID;
+            try { for (int i = 0; i < transform.childCount; i++) transform.GetChild(i).GetComponent<LineRenderer>().material = i == selectedAreaID ? selectedMat : lineMat; }
             catch { }
             Selection.activeObject = gameObject;
-            alanlariGuncelle = true;
+            _updateArea = true;
         }
-        public void YeniNokta(Vector3 poz, bool yeniAlan)
+        public void NewPoint(Vector3 position, bool newArea)
         {
-            if (transform.childCount == 0 || yeniAlan) 
+            if (transform.childCount == 0 || newArea) 
             {
-                YeniAlan(poz);
-                AlanSec(transform.childCount - 1);
-                oncekiAltNesneSayisi = transform.childCount;
+                NewArea(position);
+                ChooseArea(transform.childCount - 1);
+                _prev_childCount = transform.childCount;
             }
-            HeyArea seciliAlan = transform.GetChild(seciliAlan_id).GetComponent<HeyArea>();
+            HeyArea selectedArea = transform.GetChild(selectedAreaID).GetComponent<HeyArea>();
 
-            Transform yeniNokta = GameObject.Instantiate(pointSphere).transform;
-            yeniNokta.parent = transform.GetChild(seciliAlan_id);
-            yeniNokta.name = "Point_" + seciliAlan.transform.childCount;
-            yeniNokta.position = poz;
-            Renderer notka_R = yeniNokta.GetComponent<Renderer>();
-            notka_R.material = pointMat;
-            notka_R.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
-            DestroyImmediate(yeniNokta.GetComponent<Collider>());
+            Transform newPoint = GameObject.Instantiate(pointSphere).transform;
+            newPoint.parent = transform.GetChild(selectedAreaID);
+            newPoint.name = "Point_" + selectedArea.transform.childCount;
+            newPoint.position = position;
+            Renderer point_R = newPoint.GetComponent<Renderer>();
+            point_R.material = pointMat;
+            point_R.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            DestroyImmediate(newPoint.GetComponent<Collider>());
 
-            seciliAlan.NoktalariBoyutlandir(pointSize);
+            selectedArea.ResizePoint(pointSize, lineThickness);
 
-            Undo.RegisterCreatedObjectUndo(yeniNokta.gameObject, "Create Object");
+            Undo.RegisterCreatedObjectUndo(newPoint.gameObject, "Create Object");
         }
-        public void YeniAlan(Vector3 poz)
+        public void NewArea(Vector3 poz)
         {
-            Transform yeniAlan = new GameObject("Area_" + transform.childCount).transform;
-            yeniAlan.position = poz;
-            yeniAlan.parent = transform;
-            HeyArea yeniAlan_bilesen = yeniAlan.gameObject.AddComponent<HeyArea>();
+            Transform newArea = new GameObject("Area_" + transform.childCount).transform;
+            newArea.position = poz;
+            newArea.parent = transform;
+            HeyArea _newArea = newArea.gameObject.AddComponent<HeyArea>();
 
-            Undo.RegisterCreatedObjectUndo(yeniAlan.gameObject, "Create Object");
+            Undo.RegisterCreatedObjectUndo(newArea.gameObject, "Create Object");
         }
     }
 }

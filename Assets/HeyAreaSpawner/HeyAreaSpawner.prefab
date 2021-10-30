@@ -43,13 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a81e6ea9d31bed4eb95e4805174c682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineThickness: 5
+  pointSize: 5
+  pointSphere: {fileID: 919132149155446097, guid: 1913fa7c51a0ec14194f76a5c649db8a, type: 3}
   lineMat: {fileID: 2100000, guid: 8cc60777964130e42ab2d73de99e7c42, type: 2}
   pointMat: {fileID: 2100000, guid: 4a316325b996cbc42bf454c5137123de, type: 2}
   selectedMat: {fileID: 2100000, guid: a1f28debb32c096488412439ee2386c9, type: 2}
-  pointSphere: {fileID: 919132149155446097, guid: 1913fa7c51a0ec14194f76a5c649db8a, type: 3}
-  pointSize: 1
-  seciliAlan_id: 0
-  duzenlemeModu: 1
-  alanOzellikleri: 1
-  alaniRenderEt: 0
+  selectedAreaID: 0
+  editMode: 1
+  show_AreaObjects: 1
   parentSpawnedObject: {fileID: 0}
+  clipboard: []

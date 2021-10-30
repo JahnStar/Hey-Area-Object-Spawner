@@ -1,7 +1,7 @@
 ﻿//Developed by Halil Emre Yildiz - @Jahn_Star
 //https://github.com/JahnStar/Hey-Area-Object-Spawner
 //https://jahnstar.github.io/donate/
-// Last Edit: 18.10.2020
+// Last Update: 30.10.2021
 #if UNITY_EDITOR
 using System.Collections.Generic;
 using UnityEditor;
@@ -12,72 +12,57 @@ namespace JahnStar.AreaSpawner
     public class HeyArea : MonoBehaviour
     {
         [HideInInspector]
-        public LineRenderer cizgiOlusturucu;
+        public LineRenderer lineRenderer;
         [HideInInspector]
-        public int noktaMiktari;
-        float noktaYuksekligi;
-        private AreaSpawner anaOlusturucu;
-        [Header("Olusturulacak Nesneler Ozellikleri")]
-        public List<SpawnObjectProperty> nesneler;
+        public int pointCount;
+        float pointHeight;
+        private AreaSpawner spawner;
+        public List<SpawnObjectProperty> objects = new List<SpawnObjectProperty>();
         private void Update()
         {
-            if (!anaOlusturucu) anaOlusturucu = transform.root.GetComponent<AreaSpawner>();
-            if (!cizgiOlusturucu) 
+            if (!spawner) spawner = transform.root.GetComponent<AreaSpawner>();
+            if (!lineRenderer) 
             {
-                if (GetComponent<LineRenderer>()) cizgiOlusturucu = GetComponent<LineRenderer>();
+                if (GetComponent<LineRenderer>()) lineRenderer = GetComponent<LineRenderer>();
                 else
                 {
-                    cizgiOlusturucu = gameObject.AddComponent<LineRenderer>();
-                    cizgiOlusturucu.loop = true;
-                    cizgiOlusturucu.material = anaOlusturucu.selectedMat;
-                    cizgiOlusturucu.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+                    lineRenderer = gameObject.AddComponent<LineRenderer>();
+                    lineRenderer.loop = true;
+                    lineRenderer.material = spawner.selectedMat;
+                    lineRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
                 }
             }
 
-            noktaMiktari = transform.childCount;
+            pointCount = transform.childCount;
 
-            cizgiOlusturucu.positionCount = noktaMiktari;
-            for (int i = 0; i < noktaMiktari; i++)
+            lineRenderer.positionCount = pointCount;
+            for (int i = 0; i < pointCount; i++)
             {
                 Vector3 poz = transform.GetChild(i).position;
-                poz.y = Terrain.activeTerrain.SampleHeight(poz) + noktaYuksekligi;
+                poz.y = Terrain.activeTerrain.SampleHeight(poz) + pointHeight;
                 transform.GetChild(i).position = poz;
 
-                cizgiOlusturucu.SetPosition(i, transform.GetChild(i).position);
+                lineRenderer.SetPosition(i, transform.GetChild(i).position);
             }
-            if (anaOlusturucu.duzenlemeModu && Selection.activeObject == gameObject) 
-            { 
-                anaOlusturucu.AlanSec(int.Parse(gameObject.name.Split('_')[1]));
+            if (spawner.editMode && Selection.activeObject == gameObject) spawner.ChooseArea(int.Parse(gameObject.name.Split('_')[1]));
+        }
+        public void ResizePoint(float pointSize, float lineThickness)
+        {
+            if (lineRenderer) 
+            {
+                pointHeight = lineThickness / 2;
+                lineRenderer.startWidth = lineRenderer.endWidth = lineThickness;
             }
+            for (int i = 0; i < pointCount; i++) transform.GetChild(i).localScale = new Vector3(pointSize, pointSize, pointSize);
         }
-        public void NoktalariBoyutlandir(float yeniBoyut)
-        {
-            if (cizgiOlusturucu) noktaYuksekligi = cizgiOlusturucu.startWidth = cizgiOlusturucu.endWidth = yeniBoyut / 2;
-            for (int i = 0; i < noktaMiktari; i++) transform.GetChild(i).localScale = new Vector3(yeniBoyut, yeniBoyut, yeniBoyut);
-        }
-        public void KendiniImhaEt()
-        {
-            Undo.DestroyObjectImmediate(gameObject);
-        }
-        // Silme Engelleyici
-        protected virtual void OnEnable()
-        {
-            EditorApplication.hierarchyWindowItemOnGUI += OnHierarchyGUI;
-        }
-        protected virtual void OnDisable()
-        {
-            EditorApplication.hierarchyWindowItemOnGUI -= OnHierarchyGUI;
-        }
+        public void DestroySelf() => Undo.DestroyObjectImmediate(gameObject);
+        // block deleting
+        protected virtual void OnEnable() => EditorApplication.hierarchyWindowItemOnGUI += OnHierarchyGUI;
+        protected virtual void OnDisable() => EditorApplication.hierarchyWindowItemOnGUI -= OnHierarchyGUI;
         // disable the ability to delete GameObjects in Scene view
-        protected virtual void OnSceneGUI()
-        {
-            InterceptKeyboardDelete();
-        }
+        protected virtual void OnSceneGUI() => InterceptKeyboardDelete();
         // disable the ability to delete GameObjects in Hierarchy view
-        protected virtual void OnHierarchyGUI(int instanceID, Rect selectionRect)
-        {
-            InterceptKeyboardDelete();
-        }
+        protected virtual void OnHierarchyGUI(int instanceID, Rect selectionRect) => InterceptKeyboardDelete();
         // intercept keyboard delete event
         private void InterceptKeyboardDelete()
         {
@@ -86,7 +71,7 @@ namespace JahnStar.AreaSpawner
             {
                 //e.Use(); // warning
                 e.type = EventType.Used;
-                anaOlusturucu.AlanSec(int.Parse(gameObject.name.Split('_')[1]));
+                spawner.ChooseArea(int.Parse(gameObject.name.Split('_')[1]));
             }
         }
     }
