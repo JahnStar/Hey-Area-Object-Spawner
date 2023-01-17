@@ -1,5 +1,5 @@
 //https://jahnstar.github.io/donate/
-//First version URL: http://wiki.unity3d.com/index.php?title=Triangulator by runevision
+//First version URL: http://wiki.unity3d.com/index.php?title=Triangulator
 using UnityEngine;
 using System.Collections.Generic;
 
