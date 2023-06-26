@@ -29,37 +29,40 @@ namespace JahnStar.AreaSpawner
 
             Transform parent = new GameObject(pointsParent.name + " (" + gameObject.name + ")").transform;
             parent.parent = mainParent;
-            parent.position = new Vector3(pointsParent.position.x, 0, pointsParent.position.z);
-            parent.rotation = pointsParent.rotation;
+            parent.SetPositionAndRotation(new Vector3(pointsParent.position.x, 0, pointsParent.position.z), pointsParent.rotation);
 
             Vector3[] randomPoints = Generator.PickRandomLocations(mesh, randomType, count);
 
             for (int i = 0; i < randomPoints.Length; ++i)
             {
                 Vector3 poz3 = randomPoints[i];
-                Transform yeniNokta;
+                Transform newPoint;
                 try
                 {
-                    yeniNokta = (PrefabUtility.InstantiatePrefab(gameObject) as GameObject).transform;
-                    yeniNokta.transform.parent = parent;
+                #if UNITY_EDITOR
+                    newPoint = (PrefabUtility.InstantiatePrefab(gameObject) as GameObject).transform;
+                    newPoint.transform.parent = parent;
+                #else
+                    throw new System.Exception();
+                #endif
                 }
                 catch
                 {
-                    yeniNokta = GameObject.Instantiate(gameObject, parent).transform;
+                    newPoint = GameObject.Instantiate(gameObject, parent).transform;
                 }
 
                 float randomScale = Random.Range(scaleRange.x, scaleRange.y);
-                Vector3 newScale = yeniNokta.localScale;
+                Vector3 newScale = newPoint.localScale;
                 newScale *= randomScale;
-                if (scaleRange.x > 0 && scaleRange.y > 0) yeniNokta.localScale = newScale;
+                if (scaleRange.x > 0 && scaleRange.y > 0) newPoint.localScale = newScale;
 
                 float randomRot = Random.Range(rotRange.x, rotRange.y);
-                Vector3 newRot = yeniNokta.localRotation.eulerAngles;
+                Vector3 newRot = newPoint.localRotation.eulerAngles;
                 newRot.y += randomRot;
-                if (rotRange != Vector2.zero) yeniNokta.localRotation = Quaternion.Euler(newRot);
+                if (rotRange != Vector2.zero) newPoint.localRotation = Quaternion.Euler(newRot);
 
-                yeniNokta.localPosition = new Vector3(poz3.x, 0, poz3.z);
-                yeniNokta.localPosition = new Vector3(poz3.x, Terrain.activeTerrain.SampleHeight(yeniNokta.position), poz3.z);
+                newPoint.localPosition = new Vector3(poz3.x, 0, poz3.z);
+                newPoint.localPosition = new Vector3(poz3.x, Terrain.activeTerrain.SampleHeight(newPoint.position), poz3.z);
             }
 
             if (areaRender)

@@ -116,9 +116,9 @@ public class AreaSpawner_Editor : Editor
                             if (_target.parentSpawnedObject == null) _target.parentSpawnedObject = new GameObject(_texts[_language, 11]).transform;
                             for (int i = 0; i < selectedArea.objects.Count; i++)
                             {
-                                SpawnObjectProperty nesne = selectedArea.objects[i];
-                                if (!nesne) break;
-                                Transform objects = Creator.SpawnObjectInArea(nesne.gameObject, nesne.randomScale, nesne.randomRotation, nesne.count, selectedArea.transform, _target.parentSpawnedObject, nesne.type);
+                                SpawnObjectProperty prefab = selectedArea.objects[i];
+                                if (!prefab) break;
+                                Transform objects = Creator.SpawnObjectInArea(prefab.gameObject, prefab.randomScale, prefab.randomRotation, prefab.count, selectedArea.transform, _target.parentSpawnedObject, prefab.type);
                                 Selection.activeObject = objects;
                                 Undo.RegisterCreatedObjectUndo(objects.gameObject, _texts[_language, 12]);
                             }
@@ -177,8 +177,7 @@ public class AreaSpawner_Editor : Editor
             if (input.shift && input.type == EventType.MouseDown)
             {
                 Ray worldRay = HandleUtility.GUIPointToWorldRay(input.mousePosition);
-                RaycastHit hitInfo;
-                if (Physics.Raycast(worldRay, out hitInfo, 10000)) if (prev_point != hitInfo.point)
+                if (Physics.Raycast(worldRay, out RaycastHit hitInfo, 10000)) if (prev_point != hitInfo.point)
                     {
                         _target.NewPoint(hitInfo.point, ctrl_ok && input.control);
                         ctrl_ok = false;
