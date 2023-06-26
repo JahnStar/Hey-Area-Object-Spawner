@@ -49,7 +49,7 @@ Unity 2020.1.0 or later versions.
 
 MIT License
 
-Copyright (c) 2021 Halil Emre Yildiz
+Copyright (c) 2020-2023 Halil Emre Yildiz
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
