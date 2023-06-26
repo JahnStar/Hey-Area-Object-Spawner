@@ -6,31 +6,32 @@
     <a href="https://jahnstar.github.io/donate/" target="_blank" rel="noopener" noreferrer alt="Support the Developer">
     <img src="https://img.shields.io/badge/Donate-☕-orange.svg"/></a></a>
     
-<p align="center"><b>Spawn Random Objects Inside The Complex Area! (in unity)</b></p><p align="center">
-Hey Area Object Spawner is a very simple to use level design tool that allows you to create random objects inside a complex area on the terrain. In addition, spawning hierarchy system allows you to easily create complex area (Polygon from points) spawning systems, saving your time in level designing!</p>
+<p align="center"><b>Spawn Random Objects Inside The Complex Areas! (in unity)</b></p><p align="center">
+Hey, Area Object Spawner is a user-friendly level design tool that enables you to generate random objects within a complex area on a terrain. The spawning hierarchy system allows for the efficient creation of complex area spawning systems (defined as polygons from points), saving you time in level design!</p>
 
 <p align="center">
   <a alt="Developed by Halil Emre Yildiz" href="https://youtu.be/H4_t-tJrEok"><img src="http://img.youtube.com/vi/H4_t-tJrEok/0.jpg"><br><b>Click for tutorial video</b></a>
 </p>
 
-<p align="center">The plugin is available on the <b>Unity Asset Store</b> for free: <a href="https://assetstore.unity.com/packages/slug/181716"><b>Click for add to your unity assets</b></a></p>
+<p align="center">The plugin is available for free on the <b>Unity Asset Store</b>: <a href="https://assetstore.unity.com/packages/slug/181716"><b>Click for add to your unity assets</b></a></p>
 
 <b> Features: </b>
-* Spawning with random scale and random rotation.
-* Unlimited and freedom complex area (polygon from points) creation.
-* Add unlimited object properties
-* Edit areas in the editor and save to prefab.
-* Determine if a point is inside a area (with function)
+* Spawn objects with random scales and rotations
+* Unlimited complex area creation (polygons from points)
+* Add an unlimited number of object properties
+* Edit areas within the editor and save as prefab
+* Generate objects with attached colliders and scripts
+* Determine if a point lies within a defined area (using a provided function)
 * You can also use it as a **Procedural Foliage Spawner**
 
 ## How To Use
-1. Drag and drop the spawner into hierarchy<br>
+1. Drag and drop the spawner into the hierarchy.<br>
 <img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/HeyAreaSpawner/Tutorial/1.gif" width="230" height="305"/>
-2. Create a spawn object property<br><br>
+2. Create a spawn object property.<br><br>
 <img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/HeyAreaSpawner/Tutorial/2.gif" width="575" height="200"/>
-3. Select your spawn object and edit spawner properties<br><br>
+3. Select your spawn object and edit spawner properties.<br><br>
 <img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/HeyAreaSpawner/Tutorial/3.gif" width="205" height="291"/>
-4. Add your spawn properties to the spawner and spawn objects<br><br>
+4. Add your spawn properties to the spawner and spawn objects.<br><br>
 <img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/HeyAreaSpawner/Tutorial/4.gif" width="692" height="428"/>
 <b> New UI </b> <br><br>
 <img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/HeyAreaSpawner/Tutorial/0.png" width="261" height="381"/>
