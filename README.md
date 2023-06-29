@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/badge/Donate-☕-orange.svg"/></a></a>
     
 <p align="center"><b>Spawn Random Objects Inside The Complex Areas! (in unity)</b></p><p align="center">
-Hey, Area Object Spawner is a user-friendly level design tool that enables you to generate random objects within a complex area on a terrain. The spawning hierarchy system allows for the efficient creation of complex area spawning systems (defined as polygons from points), saving you time in level design!</p>
+Hey Area Object Spawner is a user-friendly level design tool that enables you to generate random objects within a complex area on a terrain. The spawning hierarchy system allows for the efficient creation of complex area spawning systems (defined as polygons from points), saving you time in level design!</p>
 
 <p align="center">
   <a alt="Developed by Halil Emre Yildiz" href="https://youtu.be/H4_t-tJrEok"><img src="http://img.youtube.com/vi/H4_t-tJrEok/0.jpg"><br><b>Click for tutorial video</b></a>
