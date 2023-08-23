@@ -118,7 +118,7 @@ public class AreaSpawner_Editor : Editor
                             {
                                 SpawnObjectProperty prefab = selectedArea.objects[i];
                                 if (!prefab) break;
-                                Transform objects = Creator.SpawnObjectInArea(prefab.gameObject, prefab.randomScale, prefab.randomRotation, prefab.count, selectedArea.transform, _target.parentSpawnedObject, prefab.type);
+                                Transform objects = Creator.SpawnObjectInArea(prefab.gameObject, prefab.randomScale, prefab.randomRotation, prefab.count, selectedArea.transform, _target.parentSpawnedObject, prefab.type, selectedArea.terrain);
                                 Selection.activeObject = objects;
                                 Undo.RegisterCreatedObjectUndo(objects.gameObject, _texts[_language, 12]);
                             }

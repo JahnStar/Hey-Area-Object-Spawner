@@ -20,7 +20,7 @@ namespace JahnStar.AreaSpawner
         /// <param name="randomType"></param>
         /// <param name="areaRender"></param>
         /// <returns></returns>
-        public static Transform SpawnObjectInArea(GameObject gameObject, Vector2 scaleRange, Vector2 rotRange, int count, Transform pointsParent, Transform mainParent, Generator.RandomType randomType, bool areaRender = false)
+        public static Transform SpawnObjectInArea(GameObject gameObject, Vector2 scaleRange, Vector2 rotRange, int count, Transform pointsParent, Transform mainParent, Generator.RandomType randomType, Terrain terrain, bool areaRender = false)
         {
             // Create Vector2D vertices
             Vector3[] points = new Vector3[pointsParent.childCount];
@@ -62,7 +62,7 @@ namespace JahnStar.AreaSpawner
                 if (rotRange != Vector2.zero) newPoint.localRotation = Quaternion.Euler(newRot);
 
                 newPoint.localPosition = new Vector3(poz3.x, 0, poz3.z);
-                newPoint.localPosition = new Vector3(poz3.x, Terrain.activeTerrain.SampleHeight(newPoint.position), poz3.z);
+                newPoint.localPosition = new Vector3(poz3.x, terrain.SampleHeight(newPoint.position), poz3.z);
             }
 
             if (areaRender)

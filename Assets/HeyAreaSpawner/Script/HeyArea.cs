@@ -11,6 +11,7 @@ namespace JahnStar.AreaSpawner
     [ExecuteInEditMode]
     public class HeyArea : MonoBehaviour
     {
+        public Terrain terrain; 
         [HideInInspector]
         public LineRenderer lineRenderer;
         [HideInInspector]
@@ -39,7 +40,7 @@ namespace JahnStar.AreaSpawner
             for (int i = 0; i < pointCount; i++)
             {
                 Vector3 poz = transform.GetChild(i).position;
-                poz.y = Terrain.activeTerrain.SampleHeight(poz) + pointHeight;
+                poz.y = terrain.SampleHeight(poz) + pointHeight;
                 transform.GetChild(i).position = poz;
 
                 lineRenderer.SetPosition(i, transform.GetChild(i).position);

@@ -80,6 +80,7 @@ namespace JahnStar.AreaSpawner
             newArea.parent = transform;
             HeyArea _newArea = newArea.gameObject.AddComponent<HeyArea>();
 
+            if (Terrain.activeTerrains.Length > 1) foreach (Collider collider in Physics.OverlapSphere(poz, 10, ~0)) if (collider.TryGetComponent(out Terrain terrain)) { _newArea.terrain = terrain; break; } else _newArea.terrain = Terrain.activeTerrain;
             Undo.RegisterCreatedObjectUndo(newArea.gameObject, "Create Object");
         }
     }
