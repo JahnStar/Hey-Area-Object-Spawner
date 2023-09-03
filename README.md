@@ -1,4 +1,4 @@
-# Hey Area Object Spawner v1.3
+# Hey Area Object Spawner v1.4
 
 <p align="center">
     <a href="http://u3d.as/27ry" alt="Unity 2020.1+"><img src="https://img.shields.io/badge/Unity-2020.1%2B-blue.svg" /></a>
@@ -26,17 +26,17 @@ Hey Area Object Spawner is a user-friendly level design tool that enables you to
 
 ## How To Use
 1. Drag and drop the spawner into the hierarchy.<br>
-<img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/HeyAreaSpawner/Tutorial/1.gif" width="230" height="305"/>
+<img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/JSGames/HeyAreaSpawner/Tutorial/1.gif" width="230" height="305"/>
 2. Create a spawn object property.<br><br>
-<img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/HeyAreaSpawner/Tutorial/2.gif" width="575" height="200"/>
+<img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/JSGames/HeyAreaSpawner/Tutorial/2.gif" width="575" height="200"/>
 3. Select your spawn object and edit spawner properties.<br><br>
-<img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/HeyAreaSpawner/Tutorial/3.gif" width="205" height="291"/>
+<img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/JSGames/HeyAreaSpawner/Tutorial/3.gif" width="205" height="291"/>
 4. Press Ctrl + Shift + Click to create a point and define a new area.<br>
 Click again to add additional points.<br>
 Add your spawn properties to the spawner and spawn objects.<br><br>
-<img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/HeyAreaSpawner/Tutorial/4.gif" width="692" height="428"/>
+<img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/JSGames/HeyAreaSpawner/Tutorial/4.gif" width="692" height="428"/>
 <b> New UI </b> <br><br>
-<img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/HeyAreaSpawner/Tutorial/0.png" width="261" height="381"/>
+<img src="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/Assets/JSGames/HeyAreaSpawner/Tutorial/0.png" width="261" height="381"/>
 <b> Controls </b>
 
 - Create Point: **SHIFT+CLICK**

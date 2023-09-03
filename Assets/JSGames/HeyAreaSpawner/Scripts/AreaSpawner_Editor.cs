@@ -15,11 +15,11 @@ public class AreaSpawner_Editor : Editor
     private AreaSpawner _target;
     private int _tab, _language;
     private string[,] _texts = 
-    {{"Hey Area Object Spawner v1.2", "Editor", "Settings", "Exit Edit Mode", "Edit Mode", "Selected Area: ", "Spawn Objects (in selected area)", "Copy List", "Paste List", "Clear Clipboard", "Spawn", "Created Objects (HeySpawner)", 
-        "Create Object", "Move Area", "Delete Area", "\n    Edit Mode Shortcuts: \n\n    Create Point: SHIFT+CLICK \n    Create Area: CTRL+SHIFT+CLICK \n    Delete Selected Area: BACKSPACE \n    Choose Area: Edit Mode => Click Area Line \n\n    If this doesn't work, you can try Reset All Layout. \n\n    Developed by Halil Emre Yildiz - @JahnStar \n",
+    {{"Hey Area Object Spawner v1.4", "Editor", "Settings", "Exit Edit Mode", "Edit Mode", "Selected Area: ", "Spawn Objects (in selected area)", "Copy List", "Paste List", "Clear Clipboard", "Spawn", "Created Objects (HeySpawner)", 
+        "Create Object", "Move Area", "Delete Area", "\n    Edit Mode Shortcuts: \n\n    Create Point: SHIFT+CLICK \n    Create Area: CTRL+SHIFT+CLICK \n    Delete Selected Area: BACKSPACE \n    Choose Area: Edit Mode => Click Area Line \n\n    If this doesn't work, you can try Reset All Layout. \n\n    Developed by Halil Emre Yildiz (Github: @JahnStar) \n",
         "Documentation & Licence", "Support the Developer"}, 
-    {"Hey Area Object Spawner v1.2", "Duzenleyici", "Ayarlar", "Duzenlemeden Cik", "Duzenleme Modu", "Secili Alan: ", "Nesneler Olustur (secili alanda)", "Listeyi Kopyala", "Listeyi Yapistir", "Panoyu Temizle", "Olustur", "Olusturulan Nesneler (HeySpawner)", 
-        "Nesne Olustur", "Alani Tasi", "Alani Sil", "\n    Duzenleme Modu Kisayollari: \n\n    Nokta Yarat: SHIFT+CLICK \n    Alan Yarat: CTRL+SHIFT+CLICK \n    Secili Alani Sil: BACKSPACE \n    Alani Sec: Duzenleme Modu => Alan Cizgisine Tikla \n\n    Calismiyorsa, 'Reset All Layout'a tiklayin. \n\n    Gelistiren, Halil Emre Yildiz - @JahnStar \n",
+    {"Hey Area Object Spawner v1.4", "Duzenleyici", "Ayarlar", "Duzenlemeden Cik", "Duzenleme Modu", "Secili Alan: ", "Nesneler Olustur (secili alanda)", "Listeyi Kopyala", "Listeyi Yapistir", "Panoyu Temizle", "Olustur", "Olusturulan Nesneler (HeySpawner)", 
+        "Nesne Olustur", "Alani Tasi", "Alani Sil", "\n    Duzenleme Modu Kisayollari: \n\n    Nokta Yarat: SHIFT+CLICK \n    Alan Yarat: CTRL+SHIFT+CLICK \n    Secili Alani Sil: BACKSPACE \n    Alani Sec: Duzenleme Modu => Alan Cizgisine Tikla \n\n    Calismiyorsa, 'Reset All Layout'a tiklayin. \n\n    Gelistiren, Halil Emre Yildiz (Github: @JahnStar) \n",
         "Dokumantasyon & Lisans", "Gelistiriciyi Destekle"}};
     public override void OnInspectorGUI()
     {

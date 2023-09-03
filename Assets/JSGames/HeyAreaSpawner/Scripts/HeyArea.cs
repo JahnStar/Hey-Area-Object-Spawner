@@ -1,4 +1,4 @@
-//Developed by Halil Emre Yildiz - @Jahn_Star
+﻿//Developed by Halil Emre Yildiz - @Jahn_Star
 //https://github.com/JahnStar/Hey-Area-Object-Spawner
 //https://jahnstar.github.io/donate/
 // Last Update: 30.10.2021
