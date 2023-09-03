@@ -1,4 +1,4 @@
-﻿//Developed by Halil Emre Yildiz - @Jahn_Star
+//Developed by Halil Emre Yildiz - @Jahn_Star
 //https://github.com/JahnStar/Hey-Area-Object-Spawner
 //https://jahnstar.github.io/donate/
 // Last Update: 30.10.2021
@@ -37,6 +37,12 @@ namespace JahnStar.AreaSpawner
             pointCount = transform.childCount;
 
             lineRenderer.positionCount = pointCount;
+            if (!terrain && Terrain.activeTerrains.Length == 1) terrain = Terrain.activeTerrain;
+            else if (!terrain)
+            {
+                Debug.Log(gameObject);
+                Debug.Log("Please, select a Terrain!");
+            }
             for (int i = 0; i < pointCount; i++)
             {
                 Vector3 poz = transform.GetChild(i).position;
