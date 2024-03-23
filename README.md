@@ -3,7 +3,7 @@
 <p align="center">
     <a href="http://u3d.as/27ry" alt="Unity 2020.1+"><img src="https://img.shields.io/badge/Unity-2020.1%2B-blue.svg" /></a>
     <a href="https://github.com/JahnStar/Hey-Area-Object-Spawner/blob/master/LICENSE" alt="License: MIT"><img src="https://img.shields.io/badge/License-MIT-brightgreen.svg" />
-    <a href="https://jahnstar.github.io/donate/" target="_blank" rel="noopener" noreferrer alt="Support the Developer">
+    <a href="https://u3d.as/38Vw" target="_blank" rel="noopener" noreferrer alt="Support the Developer">
     <img src="https://img.shields.io/badge/Donate-☕-orange.svg"/></a></a>
     
 <p align="center"><b>Spawn Random Objects Inside The Complex Areas! (in unity)</b></p><p align="center">
